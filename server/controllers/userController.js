@@ -15,6 +15,17 @@ const userFindAll = function (req, res) {
     res.status(500).send(err)
   })
 }
+const userFindById = function (req,res) {
+  let id = {
+    _id : ObjectId(req.params.id)
+  }
+  Users.findById(id).then(function (data_User) {
+  console.log(data_User)
+  res.status(201).send(data_User)
+  }).catch( function (err) {
+    console.log('[-] error User find by id')
+  })
+}
 const userCreate = function (req,res) {
   let saltRound = 10
   bcrypt.hash(req.body.password, saltRound).then(function(hash){
@@ -28,7 +39,7 @@ const userCreate = function (req,res) {
     console.log('new user >>', newUser)
     newUser.save().then(function(){
       res.status(201).send('[+] 1 User Created from register')
-    }).catch(function(err){
+    }).catch( function (err) {
       console.log('[-] error User Create from register')
       res.send({
         msg: errmsg(err),
@@ -124,6 +135,7 @@ const SignIn = function (req, res) {
 
 module.exports = {
   userFindAll,
+  userFindById,
   userCreate,
   updateUser,
   destroyUser,
