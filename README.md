@@ -11,10 +11,16 @@ Route | HTTP | Description
 ----- | ---- | -----------
 `/api/users` | GET | Get all the users info
 `/api/users/:id` | GET | Get a single user info
-`/api/users` | POST | Create a user while get an access token based on credentials
 `/api/users/:id` | DELETE | Delete a user(admin only)
 `/api/users/:id` | PUT | Update a user with new info
+`/api/users` | POST | Signup a user while get an access token based on credentials
 `/api/users` | POST | Sign In while get an access an main client
+
+#### List of endpoint PHOTO API:
+Route | HTTP | Description
+----- | ---- | -----------
+`/api/photos` | GET | Get all the photo data
+
 
 ## Usage
 #### With only npm:
