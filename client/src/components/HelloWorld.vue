@@ -1,22 +1,17 @@
 <template>
  <div class="container">
-   <div class="row col-md-12 col-md-offset-2">
-     <Card/>
+   <div class="row col-md-12">
+     <MainPage></MainPage>
    </div>
  </div>
 </template>
 
 <script>
-import Card from '@/components/card'
+import MainPage from '@/components/MainPage'
 export default {
   name: 'HelloWorld',
   components: {
-    Card
-  },
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
+    MainPage
   }
 }
 </script>
