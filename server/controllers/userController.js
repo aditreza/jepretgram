@@ -80,9 +80,14 @@ const destroyUser = function (req, res) {
   })
 }
 
+const SignIn = function (req, res) {
+
+}
+
 module.exports = {
   userFindAll,
   userCreate,
   updateUser,
-  destroyUser
+  destroyUser,
+  SignIn
 }
