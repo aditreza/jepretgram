@@ -27,9 +27,11 @@ mongoose.connect('mongodb://localhost/aditreza')
 
 //routes
 const users = require('./routes/user')
+const photo = require('./routes/photo')
 
 app.get('/', (req, res) => res.json({message: "Welcome to jepretgram API!"}))
 app.use('/api/users', users)
+app.use('/api/photos', photo)
 
 app.listen(PORT, function(err){
   if(!err){
