@@ -3,7 +3,7 @@ const Photos = require('../models/photoModel')
 
 const findAllPhoto = function (req, res) {
   Photos.find().then(function (data_Photos) {
-    console.log('[+] get all photo')
+    console.log('[+] get all photo', data_Photos)
     res.status(200).send(data_Photos)
   }).catch(function (err){
     console.log('err[-] get all photo')
