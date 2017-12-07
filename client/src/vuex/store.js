@@ -22,7 +22,7 @@ const mutations = {
 
 const actions = {
   getAllPhoto ({ commit }) {
-    http.get('api/photos/').then(({data}) => {
+    http.get('api/photos').then(({data}) => {
       console.log(data)
       commit('getAllPhoto', data)
     }).catch(err => {

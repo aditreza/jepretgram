@@ -9,6 +9,9 @@ export default {
   props: ['photos'],
   components: {
     Card
+  },
+  created: function () {
+    console.log(this.photos)
   }
 }
 </script>

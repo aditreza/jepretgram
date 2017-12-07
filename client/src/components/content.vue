@@ -20,6 +20,9 @@ export default {
     ...mapActions([
       'getAllPhoto'
     ])
+  },
+  created () {
+    this.getAllPhoto()
   }
 }
 </script>
