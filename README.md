@@ -9,13 +9,12 @@ client vuejs
 #### List of endpoint USER API:
 Route | HTTP | Description
 ----- | ---- | -----------
-`/api/users` | GET | Get all the users info(admin only)
-`/api/users/:id` | GET | Get a single user info(admin & user Auth)
-`/api/users` | POST | Create a user(admin only)
+`/api/users` | GET | Get all the users info
+`/api/users/:id` | GET | Get a single user info
+`/api/users` | POST | Create a user while get an access token based on credentials
 `/api/users/:id` | DELETE | Delete a user(admin only)
-`/api/users/:id` | PUT | Update a user with new info(admin & user Auth)
-`/api/signup` | POST | Sign up with new User info
-`/api/signin` | POST | Sign up while get an access token based on credentials
+`/api/users/:id` | PUT | Update a user with new info
+`/api/users` | POST | Sign In while get an access an main client
 
 ## Usage
 #### With only npm:
