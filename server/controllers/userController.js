@@ -81,7 +81,45 @@ const destroyUser = function (req, res) {
 }
 
 const SignIn = function (req, res) {
-
+  Users.findOne({
+    username: req.body.username
+  }).then(function(data_User){
+    if(data_User){
+      bcrypt.compare(req.body.password, data_User.password).then(function(result){
+        if(result){
+          console.log('data user signin>>', data_User.id)
+          jwt.sign({
+            id : data_User.id,
+            username : data_User.username
+          }, secret_key, function(err, token){
+            if(!err){
+              console.log('this token >>', token)
+              res.status(201).send({
+                success: true,
+                message: 'Enjoy your token!',
+                token: token,
+                username: data_User.fullname,
+                user_Id:data_User.id
+              })
+            }
+          })
+        }else{
+          res.status(403).send({
+            msg: result
+          })
+        }
+      })
+    }else{
+      res.status(404).send({
+        msg: data_User
+      })
+    }
+  }).catch(function(err){
+    if(err){
+      res.status(500).send(err)
+      console.log('err >>', err)
+    }
+  })
 }
 
 module.exports = {
