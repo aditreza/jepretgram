@@ -4,14 +4,24 @@
 
 <script>
 import Card from '@/components/card'
+import {mapActions, mapState} from 'vuex'
 export default {
   name: 'HelloWorld',
-  props: ['photos'],
   components: {
     Card
   },
-  created: function () {
-    console.log(this.photos)
+  computed: {
+    ...mapState([
+      'photos'
+    ])
+  },
+  methods: {
+    ...mapActions([
+      'getAllPhoto'
+    ])
+  },
+  created () {
+    this.getAllPhoto()
   }
 }
 </script>

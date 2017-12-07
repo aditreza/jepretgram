@@ -22,8 +22,10 @@ const mutations = {
 
 const actions = {
   getAllPhoto ({ commit }) {
-    http.get('api/photos').then(({data}) => {
-      console.log(data)
+    console.log('MASUK')
+    http.get('api/photos')
+    .then((data) => {
+      console.log('MASA GAKENA', data)
       commit('getAllPhoto', data)
     }).catch(err => {
       console.error(err)
